@@ -23,10 +23,23 @@ import com.mysql.cj.xdevapi.SessionFactory;
 public class GroceryController {
 	org.hibernate.SessionFactory sf=SessionFactoryConfigr.getSessionFactory();
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView  save(Model m)
+	public ModelAndView  save(@ModelAttribute("user") User user)
 	{
 		
-		return new ModelAndView ("index");
+		//return new ModelAndView ("index");//for main app
+		//return new ModelAndView ("welcome");//for request mapping practise
+		//return new ModelAndView ("DTO");//for DTO practise
+		//add user object only for model
+	/*	User user=new User();
+		user.setUsername("enter user name");
+		user.setPassword("enetr last name");
+		m.addAttribute(user);*/
+		//if we want to use @modelattribute then comment above lines and
+		//add @modelattribute in method argumets
+		return new ModelAndView ("model");//for model practise
+		
+		
+		
 	}
 	@RequestMapping("/save")
 	public String saveproduct(@RequestParam String[] name,@RequestParam String quantity[],
@@ -156,6 +169,6 @@ public class GroceryController {
 	}
 	
 	
-//@RequestParam String name,@RequestParam String quantity,
+//@RequestParam St  ring name,@RequestParam String quantity,
 //	@RequestParam String price,@RequestParam String id
 }

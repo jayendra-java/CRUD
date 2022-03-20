@@ -134,7 +134,7 @@ function validateForm()
 			</td></tr>
 			</tfoot>
 			</table>
-			
+			<a href="/GroceryBilling/src/main/webapp/WEB-INF/jsp/welcome.jsp">click here for practise</a>
   </form>  
 </body>
 </html>
